@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary:    #f8f9fa;
+  --bg-secondary:  #ffffff;
+  --bg-card:       #ffffff;
+  --accent:        #1a1a2e;
+  --accent-soft:   #4a4a6a;
+  --text-primary:  #1a1a2e;
+  --text-secondary:#6b6b8a;
+  --border:        #e0e0f0;
+  --shadow:        0 4px 24px rgba(0,0,0,0.08);
+  --shadow-hover:  0 8px 40px rgba(0,0,0,0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem; 
+  padding-top: 2rem; 
+  color: var(--text-primary);
+}
+
+.section-title span {
+  color: var(--accent-soft);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: 'Fira Code', monospace;
+  background: #f0f0f8;
+  border: 1px solid var(--border);
+  color: var(--accent-soft);
+  margin: 3px;
+}
