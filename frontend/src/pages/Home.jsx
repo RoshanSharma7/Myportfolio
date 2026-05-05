@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import Background3D from '../three/Background3D'
+// import Background3D from '../three/Background3D'
 import { FiDownload, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 const API = import.meta.env.VITE_API_URL
@@ -117,7 +117,7 @@ export default function Home() {
     }}>
 
       {/* 3D Background */}
-      <Background3D />
+      {/* <Background3D /> */}
 
       {/* Overlay */}
       <div style={{
