@@ -5,8 +5,9 @@ import { FiDownload } from 'react-icons/fi'
 import {
   FiGithub, FiLinkedin, FiTwitter,
   FiInstagram, FiYoutube, FiGlobe,
-  FiMail, FiMapPin, FiPhone,
+  FiMail, FiMapPin, FiPhone, FiCode,
 } from 'react-icons/fi'
+import { Helmet } from 'react-helmet-async'
 
 const API = import.meta.env.VITE_API_URL
 
@@ -17,6 +18,7 @@ const ICON_MAP = {
   FiInstagram: FiInstagram,
   FiYoutube: FiYoutube,
   FiGlobe: FiGlobe,
+  FiCode: FiCode,
 }
 
 function Avatar({ name, imageUrl }) {
@@ -284,6 +286,7 @@ export default function About() {
   }, [])
 
   if (loading) return (
+    
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
@@ -302,6 +305,9 @@ export default function About() {
       background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
       paddingTop: isMobile ? '30px':'50px',
     }}>
+      <Helmet>
+        <title>Home - Roshan Sharma </title>
+      </Helmet>
       <div className="section">
 
         <motion.h2

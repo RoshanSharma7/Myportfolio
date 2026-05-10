@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
-
+import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
 
 function Loader() {
@@ -176,6 +176,9 @@ export default function Skills() {
       background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
       paddingTop: '80px',
     }}>
+      <Helmet>
+        <title>Skills - Roshan Sharma </title>
+      </Helmet>
       <div className="section">
 
         <motion.h2

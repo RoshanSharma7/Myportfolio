@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { FiLogOut, FiPlus, FiEdit2, FiTrash2, FiX, FiCheck } from 'react-icons/fi'
-
+import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
 
 function authHeaders() {
@@ -321,7 +321,9 @@ function ProfileSection() {
         <FormField label="phone"    name="phone"    value={form.phone    || ''} onChange={handleChange} placeholder="+91 XXXXXXXXXX"             />
         <FormField label="location" name="location" value={form.location || ''} onChange={handleChange} placeholder="City, Country"             />
       </div>
-
+      <Helmet>
+        <title>Admin - Roshan Sharma </title>
+    </Helmet>
       <FormField label="bio" name="bio" value={form.bio || ''} onChange={handleChange} type="textarea" placeholder="Write something about yourself..." />
 
       <div style={{ marginBottom: '1.5rem' }}>

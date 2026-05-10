@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 // import Background3D from '../three/Background3D'
 import { FiDownload, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-
+import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
 
 const roles = [
@@ -115,7 +115,9 @@ export default function Home() {
       background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
       overflow:   'hidden',
     }}>
-
+      <Helmet>
+        <title>Home - Roshan Sharma </title>
+      </Helmet>
       {/* 3D Background */}
       {/* <Background3D /> */}
 

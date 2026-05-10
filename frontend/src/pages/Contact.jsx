@@ -2,17 +2,9 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-import {
-  FiMail,
-  FiMapPin,
-  FiPhone,
-  FiGithub,
-  FiLinkedin,
-  FiTwitter,
-  FiGlobe,
-  FiInstagram,
-} from 'react-icons/fi'
-
+import {FiMail, FiMapPin, FiPhone, FiGithub, FiLinkedin, FiTwitter,
+  FiGlobe, FiInstagram, FiCode} from 'react-icons/fi'
+import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
 
 const ICON_MAP = {
@@ -22,6 +14,7 @@ const ICON_MAP = {
   FiInstagram: FiInstagram,
   FiGlobe:     FiGlobe,
   FiMail:      FiMail,
+  FiCode: FiCode,
 }
 
 function ContactForm() {
@@ -287,8 +280,10 @@ export default function Contact() {
       background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
       paddingTop: '80px',
     }}>
+      <Helmet>
+        <title>Contact - Roshan Sharma </title>
+      </Helmet>
       <div className="section">
-
         <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 20 }}

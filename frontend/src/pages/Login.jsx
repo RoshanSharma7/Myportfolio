@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-
+import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
 
 export default function Login() {
@@ -70,6 +70,9 @@ export default function Login() {
       justifyContent: 'center',
       padding:        '2rem',
     }}>
+      <Helmet>
+        <title>Login - Roshan Sharma </title>
+      </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

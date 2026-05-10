@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { getCertifications } from '../api/certification'
-
+import { Helmet } from 'react-helmet-async'
 function Loader() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
@@ -136,6 +136,9 @@ export default function Certification() {
       background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
       paddingTop: '80px',
     }}>
+      <Helmet>
+        <title>Certification - Roshan Sharma </title>
+      </Helmet>
       <div className="section">
 
         <motion.h2
