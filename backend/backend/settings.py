@@ -2,7 +2,10 @@ from pathlib import Path
 from datetime import timedelta
 import os
 import dj_database_url
-import cloudinary, cloudinary_storage, cloudinary.api
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import cloudinary_storage
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,8 +32,8 @@ INSTALLED_APPS = [
     'links',
     'contact',
     'userauth',
+    'cloudinary',
     'cloudinary_storage',
-    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -104,10 +107,11 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', ''),
 }
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

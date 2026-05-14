@@ -36,7 +36,7 @@ function CertCard({ cert, index }) {
       {/* Certificate image */}
       {cert.image && (
         <img
-          src={cert.image}
+          src={cert.image_url || cert.image}
           alt={cert.title}
           style={{
             width: '100%',

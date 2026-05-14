@@ -19,6 +19,7 @@ const ICON_MAP = {
   FiYoutube: FiYoutube,
   FiGlobe: FiGlobe,
   FiCode: FiCode,
+  FiMail: FiMail,
 }
 
 function Avatar({ name, imageUrl }) {
@@ -334,7 +335,7 @@ export default function About() {
             {/* Avatar with image or initials */}
             <Avatar 
               name={profile ? profile.name : 'RS'} 
-              imageUrl={profile?.avatar || null}
+              imageUrl={profile.avatar_url || profile.avatar}
             />
 
             <h3 style={{
@@ -368,7 +369,7 @@ export default function About() {
             {/* Resume download button */}
             {profile?.resume && (
               <a
-                href={profile.resume}
+                href={profile.resume_url || profile.resume}
                 download
                 style={{
                   display: 'inline-flex',

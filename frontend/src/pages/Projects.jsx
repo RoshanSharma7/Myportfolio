@@ -81,7 +81,7 @@ function ProjectCard({ project, index }) {
       {/* Thumbnail image */}
       {project.thumbnail && (
         <img
-          src={project.thumbnail}
+          src={project.thumbnail_url || project.thumbnail}
           alt={project.title}
           style={{
             width: '100%',
