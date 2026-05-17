@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-// import Background3D from '../three/Background3D'
+import Background3D from '../three/Background3D'
 import { FiDownload, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
@@ -119,7 +119,7 @@ export default function Home() {
         <title>Home - Roshan Sharma </title>
       </Helmet>
       {/* 3D Background */}
-      {/* <Background3D /> */}
+      <Background3D />
 
       {/* Overlay */}
       <div style={{
@@ -227,8 +227,8 @@ export default function Home() {
           >
             {profile?.resume && (
               <a
-                href={profile.resume}
-                download
+                href={'https://drive.google.com/drive/folders/18mZxOcbcGlVDdXRp8GAunpN7BnSayMp8?usp=sharing'}
+                target='_blank'
                 style={{
                   padding:        isMobile ? '10px 18px' : '11px 26px',
                   borderRadius:   '8px',
@@ -246,7 +246,7 @@ export default function Home() {
                 }}
                 onMouseOver={function(e) {
                   e.currentTarget.style.transform = 'translateY(-2px)'
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(44, 26, 26, 0.3)'
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(71, 66, 66, 0.3)'
                 }}
                 onMouseOut={function(e) {
                   e.currentTarget.style.transform = 'translateY(0)'
@@ -274,14 +274,14 @@ export default function Home() {
             }}
               onMouseOver={function(e) {
                   e.currentTarget.style.transform = 'translateY(-2px)'
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(26,26,46,0.2'
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(71, 66, 66, 0.3)'
                 }}
                 onMouseOut={function(e) {
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = '0 4px 16px rgba(26,26,46,0.2)'
                 }}
               >
-              Contact Me🙋🏻
+              Hire ME 🙋🏻
             </Link>
           </motion.div>
 

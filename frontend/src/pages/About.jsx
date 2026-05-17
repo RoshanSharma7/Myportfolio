@@ -335,7 +335,7 @@ export default function About() {
             {/* Avatar with image or initials */}
             <Avatar 
               name={profile ? profile.name : 'RS'} 
-              imageUrl={profile.avatar_url || profile.avatar}
+              imageUrl={profile.avatar}
             />
 
             <h3 style={{
@@ -369,8 +369,8 @@ export default function About() {
             {/* Resume download button */}
             {profile?.resume && (
               <a
-                href={profile.resume_url || profile.resume}
-                download
+                href={'https://drive.google.com/drive/folders/18mZxOcbcGlVDdXRp8GAunpN7BnSayMp8?usp=sharing'}
+                target='_blank'
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
