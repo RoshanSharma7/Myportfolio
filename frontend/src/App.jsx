@@ -12,7 +12,6 @@ import Projects      from './pages/Projects'
 import Contact       from './pages/Contact'
 import Login         from './pages/Login'
 import Admin         from './pages/Admin'
-import Background3D from './three/Background3D'
 
 export default function App() {
   return (
