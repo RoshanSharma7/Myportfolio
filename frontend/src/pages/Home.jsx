@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import Background3D from '../three/Background3D.jsx'
+import Background3D from './three/Background3D.jsx'
 import { FiDownload, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { Helmet } from 'react-helmet-async'
 const API = import.meta.env.VITE_API_URL
