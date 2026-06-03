@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import App from './App.jsx'
 import './styles/global.css'
-import Background3D from './three/Background3D.jsx'
+import Background3D from '../three/Background3D.jsx'
 import { Toaster } from 'react-hot-toast'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
