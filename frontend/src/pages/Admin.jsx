@@ -484,7 +484,7 @@ function SkillsSection() {
   const [modal,   setModal]   = useState(false)
   const [saving,  setSaving]  = useState(false)
   const [editing, setEditing] = useState(null)
-  const [form,    setForm]    = useState({ name: '', level: 'intermediate', icon: '' })
+  const [form,    setForm]    = useState({ name: '', category: 'other', level: 'intermediate', icon: '' })
 
   function fetchSkills() {
     axios.get(API + '/skills/')
@@ -500,7 +500,7 @@ function SkillsSection() {
 
   function openAdd() {
     setEditing(null)
-    setForm({ name: '', level: 'intermediate', icon: '' })
+    setForm({ name: '', category: 'other', level: 'intermediate', icon: '' })
     setModal(true)
   }
 
@@ -557,7 +557,7 @@ function SkillsSection() {
             return (
               <div key={skill.id} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', background: '#fff', borderRadius: '8px', border: '1px solid #e0e0f0' }}>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '13px', color: '#1a1a2e' }}>{skill.name}</span>
-                <span style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: '#9999bb' }}>{skill.level}</span>
+                <span style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: '#9999bb' }}>{skill.category} · {skill.level}</span>
                 <ActionBtn icon={<FiEdit2 size={12} />}  onClick={function() { openEdit(skill)        }} title="Edit"   />
                 <ActionBtn icon={<FiTrash2 size={12} />} onClick={function() { handleDelete(skill.id) }} title="Delete" color="#e74c3c" />
               </div>
@@ -569,6 +569,7 @@ function SkillsSection() {
       {modal && (
         <Modal title={editing ? 'Edit Skill' : 'Add Skill'} onClose={function() { setModal(false) }}>
           <FormField label="name"  name="name"  value={form.name  || ''} onChange={handleChange} required placeholder="e.g. React"    />
+          <SelectField label="category" name="category" value={form.category || 'other'} onChange={handleChange} options={[ { value: 'language', label: 'Languages' }, { value: 'framework', label: 'Frameworks' }, { value: 'database', label: 'Databases' }, { value: 'tools', label: 'Tools' }, { value: 'other', label: 'Other' } ]} />
           <SelectField label="level" name="level" value={form.level} onChange={handleChange} options={[ { value: 'beginner',     label: 'Beginner'     }, { value: 'intermediate', label: 'Intermediate' }, { value: 'expert',       label: 'Expert'       } ]} />
           <SaveBtn loading={saving} onClick={handleSave} />
         </Modal>

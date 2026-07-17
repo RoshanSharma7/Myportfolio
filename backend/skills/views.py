@@ -4,7 +4,7 @@ from .serializers import SkillSerializer
 
 
 class SkillViewSet(viewsets.ModelViewSet):
-    queryset = Skill.objects.all().order_by('category', 'order')
+    queryset = Skill.objects.all().order_by('order')
     serializer_class = SkillSerializer
 
     def get_permissions(self):
