@@ -1,13 +1,14 @@
 from pathlib import Path
 from datetime import timedelta
 import os
+from dotenv import load_dotenv
 import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import cloudinary_storage
 
-
+load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key')
@@ -107,11 +108,21 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', ''),
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Django 5.1+ removed DEFAULT_FILE_STORAGE / STATICFILES_STORAGE in favor of STORAGES.
+# Using the old settings on Django 6 is a silent no-op (no error, no warning) --
+# it just falls back to local FileSystemStorage, which is why uploads were never
+# reaching Cloudinary.
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
