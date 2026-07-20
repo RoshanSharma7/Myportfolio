@@ -122,7 +122,7 @@ export default function Home() {
           own content on mobile so it doesn't stretch the model area down
           across the cards below it. */}
       <div style={{
-        minHeight:      'auto',
+        minHeight:      isMobile ? 'auto' : '100vh',
         position:       'relative',
         display:        'flex',
         alignItems:     isMobile ? 'flex-start' : 'center',
@@ -351,7 +351,7 @@ export default function Home() {
           // padding:   isMobile ? '0.5rem 1rem 3rem' : '5rem 2rem 0 2rem',
           // zIndex: 3,
           // pointerEvents: 'auto',
-
+          bottom : 0,
           position:  'relative',
           width:     '100%',
           maxWidth:  '1250px',
