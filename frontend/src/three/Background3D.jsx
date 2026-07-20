@@ -4,8 +4,8 @@ import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 
 const MODELS = [
-  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 3 },
-  { url: '/models/cricket.glb', desktopSize: 6, mobileSize: 4.7 },
+  { url: '/models/laptop.glb',  desktopSize: 5.5, mobileSize: 3 },
+  { url: '/models/cricket.glb', desktopSize: 6.5, mobileSize: 4.7 },
   { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 3.5 },
 ]
 
