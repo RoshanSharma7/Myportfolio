@@ -151,7 +151,7 @@ export default function Home() {
         zIndex:   2,
         maxWidth: '1250px',
         margin:   '0 auto',
-        padding:  isMobile ? '5.5rem 1rem 2rem' : '100px 2rem 1rem',
+        padding:  isMobile ? '5.5rem 1rem 2rem' : '140px 2rem 1rem',
         width:    '100%',
       }}>
         <motion.div
