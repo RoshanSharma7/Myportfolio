@@ -614,7 +614,7 @@ export default function Home() {
         position:      'absolute',
         top: 0, left: 0, right: 0, bottom: 0,
         background:    isMobile
-          ? 'rgba(248,249,250,0.50)'
+          ? 'rgba(248,249,250,0.62)'
           : isTablet
             ? 'linear-gradient(90deg, rgba(248,249,250,0.98) 50%, rgba(248,249,250,0.1) 100%)'
             : 'linear-gradient(90deg, rgba(248,249,250,0.98) 45%, rgba(248,249,250,0.0) 75%)',
@@ -867,6 +867,9 @@ export default function Home() {
                     border: '1px solid #e0e0f0',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                     backdropFilter: 'blur(10px)',
+                    minHeight: '215px',
+                    display: 'flex',
+                    flexDirection: 'column',
                   }}
                 >
                   <span style={{
@@ -885,8 +888,21 @@ export default function Home() {
                     {projects[projectIndex]?.title}
                   </h3>
                   <p style={{ color: '#6b6b8a', fontSize: '0.8rem', lineHeight: '1.5', margin: '0.4rem 0 0 0' }}>
-                    {projects[projectIndex]?.description?.substring(0, 80)}...
+                    {projects[projectIndex]?.description?.substring(0, 80)}
+                    {projects[projectIndex]?.description?.length > 80 ? '...' : ''}
                   </p>
+                  <Link to="/projects" style={{
+                    marginTop: 'auto',
+                    paddingTop: '0.8rem',
+                    fontFamily: 'Fira Code, monospace',
+                    fontSize: '11px',
+                    color: '#1a1a2e',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    alignSelf: 'flex-start',
+                  }}>
+                    Show more &rarr;
+                  </Link>
                 </motion.div>
                 <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: '#9999bb', textAlign: 'center', marginTop: '0.5rem' }}>
                   {projectIndex + 1} / {projects.length}
@@ -922,6 +938,9 @@ export default function Home() {
                     border: '1px solid #e0e0f0',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                     backdropFilter: 'blur(10px)',
+                    minHeight: '215px',
+                    display: 'flex',
+                    flexDirection: 'column',
                   }}
                 >
                   {experiences[expIndex]?.is_current && (
@@ -945,8 +964,21 @@ export default function Home() {
                     {experiences[expIndex]?.company}
                   </p>
                   <p style={{ color: '#6b6b8a', fontSize: '0.8rem', lineHeight: '1.5', margin: 0 }}>
-                    {experiences[expIndex]?.description?.substring(0, 80)}...
+                    {experiences[expIndex]?.description?.substring(0, 80)}
+                    {experiences[expIndex]?.description?.length > 80 ? '...' : ''}
                   </p>
+                  <Link to="/experience" style={{
+                    marginTop: 'auto',
+                    paddingTop: '0.8rem',
+                    fontFamily: 'Fira Code, monospace',
+                    fontSize: '11px',
+                    color: '#1a1a2e',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    alignSelf: 'flex-start',
+                  }}>
+                    Show more &rarr;
+                  </Link>
                 </motion.div>
                 <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: '#9999bb', textAlign: 'center', marginTop: '0.5rem' }}>
                   {expIndex + 1} / {experiences.length}

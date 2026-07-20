@@ -83,7 +83,7 @@ export default function Background3D() {
 
   return (
     <div style={{
-      position:      'absolute',
+      position:      isMobile ? 'fixed': 'absolute',
       top:           isMobile ? '50%'  : '0',
       left:          isMobile ? '50%'  : 'auto',
       right:         isMobile ? 'auto' : '0',
