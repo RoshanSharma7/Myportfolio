@@ -341,14 +341,22 @@ export default function Home() {
       {/* Cards - pinned to hero bottom on desktop, flows naturally below on mobile */}
       {(projects.length > 0 || experiences.length > 0) && (
         <div style={{
-          position:  isMobile ? 'relative' : 'absolute',
-          bottom:    isMobile ? 'auto' : '0',
-          left:      isMobile ? 'auto' : '50%',
-          transform: isMobile ? 'none' : 'translateX(-50%)',
+          // position:  isMobile ? 'relative' : 'absolute',
+          // bottom:    isMobile ? 'auto' : '0',
+          // left:      isMobile ? 'auto' : '50%',
+          // transform: isMobile ? 'none' : 'translateX(-50%)',
+          // width:     '100%',
+          // maxWidth:  '1250px',
+          // margin:    isMobile ? '0 auto' : 0,
+          // padding:   isMobile ? '0.5rem 1rem 3rem' : '5rem 2rem 0 2rem',
+          // zIndex: 3,
+          // pointerEvents: 'auto',
+
+          position:  'relative',
           width:     '100%',
           maxWidth:  '1250px',
-          margin:    isMobile ? '0 auto' : 0,
-          padding:   isMobile ? '0.5rem 1rem 3rem' : '5rem 2rem 0 2rem',
+          margin:    '0 auto',
+          padding:   isMobile ? '0.5rem 1rem 3rem' : '3rem 2rem 4rem',
           zIndex: 3,
           pointerEvents: 'auto',
         }}>
