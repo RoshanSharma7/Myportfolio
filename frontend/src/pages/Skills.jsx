@@ -7,7 +7,7 @@ const API = import.meta.env.VITE_API_URL
 function Loader() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>loading...</p>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
     </div>
   )
 }
@@ -16,10 +16,10 @@ function EmptyState() {
   return (
     <div style={{
       textAlign: 'center', padding: '4rem',
-      background: '#fff', borderRadius: '16px',
-      border: '1px dashed #e0e0f0',
+      background: 'var(--bg-secondary)', borderRadius: '16px',
+      border: '1px dashed var(--border)',
     }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>
         no_skills_found()
       </p>
     </div>
@@ -28,9 +28,9 @@ function EmptyState() {
 
 function LevelBadge({ level }) {
   const colors = {
-    beginner: { bg: '#f0f0f8', color: '#4a4a6a' },
+    beginner: { bg: 'var(--badge-bg)', color: 'var(--accent-soft)' },
     intermediate: { bg: '#e8f4fd', color: '#1a5276' },
-    expert: { bg: '#1a1a2e', color: '#ffffff' },
+    expert: { bg: 'var(--text-primary)', color: 'var(--bg-secondary)' },
   }
   const style = colors[level] || colors.beginner
 
@@ -60,20 +60,20 @@ function SkillChip({ skill, index }) {
         justifyContent: 'space-between',
         gap: '8px',
         padding: '10px 16px',
-        background: '#fff',
+        background: 'var(--bg-secondary)',
         borderRadius: '10px',
-        border: '1px solid #e0e0f0',
+        border: '1px solid var(--border)',
         boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
         transition: 'all 0.3s',
         cursor: 'default',
       }}
       onMouseOver={function(e) {
-        e.currentTarget.style.borderColor = '#1a1a2e'
+        e.currentTarget.style.borderColor = 'var(--text-primary)'
         e.currentTarget.style.transform = 'translateY(-2px)'
         e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)'
       }}
       onMouseOut={function(e) {
-        e.currentTarget.style.borderColor = '#e0e0f0'
+        e.currentTarget.style.borderColor = 'var(--border)'
         e.currentTarget.style.transform = 'translateY(0)'
         e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.04)'
       }}
@@ -82,7 +82,7 @@ function SkillChip({ skill, index }) {
         fontFamily: 'Space Grotesk, sans-serif',
         fontSize: '0.9rem',
         fontWeight: '500',
-        color: '#1a1a2e',
+        color: 'var(--text-primary)',
         margin: 0,
       }}>
         {skill.name}
@@ -109,17 +109,17 @@ function CategorySection({ category, skills, catIndex }) {
         <p style={{
           fontFamily: 'Fira Code, monospace',
           fontSize: '0.85rem',
-          color: '#9999bb',
+          color: 'var(--text-muted)',
           margin: 0,
         }}>
           {'//'} {category.toLowerCase()}
         </p>
-        <div style={{ flex: 1, height: '1px', background: '#e0e0f0' }} />
+        <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
         <span style={{
           fontFamily: 'Fira Code, monospace',
           fontSize: '11px',
-          color: '#9999bb',
-          background: '#f0f0f8',
+          color: 'var(--text-muted)',
+          background: 'var(--badge-bg)',
           padding: '2px 8px',
           borderRadius: '20px',
         }}>
@@ -173,7 +173,7 @@ export default function Skills() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: '80px',
     }}>
       <Helmet>
@@ -197,7 +197,7 @@ export default function Skills() {
           style={{
             textAlign: 'center',
             fontFamily: 'Fira Code, monospace',
-            color: '#9999bb',
+            color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
             marginTop: '-2rem',

@@ -7,7 +7,7 @@ const API = import.meta.env.VITE_API_URL
 function Loader() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>loading...</p>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
     </div>
   )
 }
@@ -16,10 +16,10 @@ function EmptyState() {
   return (
     <div style={{
       textAlign: 'center', padding: '4rem',
-      background: '#fff', borderRadius: '16px',
-      border: '1px dashed #e0e0f0',
+      background: 'var(--bg-secondary)', borderRadius: '16px',
+      border: '1px dashed var(--border)',
     }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>
         no_education_found()
       </p>
     </div>
@@ -48,7 +48,7 @@ function EducationCard({ edu, index }) {
             fontFamily: 'Space Grotesk, sans-serif',
             fontSize: '1.1rem',
             fontWeight: '600',
-            color: '#1a1a2e',
+            color: 'var(--text-primary)',
             marginBottom: '0.2rem',
           }}>
             {edu.degree} in {edu.field}
@@ -56,7 +56,7 @@ function EducationCard({ edu, index }) {
           <p style={{
             fontFamily: 'Fira Code, monospace',
             fontSize: '0.85rem',
-            color: '#4a4a6a',
+            color: 'var(--accent-soft)',
             margin: 0,
           }}>
             {edu.institution}
@@ -64,12 +64,12 @@ function EducationCard({ edu, index }) {
         </div>
 
         <div style={{
-          background: '#f0f0f8',
+          background: 'var(--badge-bg)',
           borderRadius: '20px',
           padding: '4px 12px',
           fontSize: '12px',
           fontFamily: 'Fira Code, monospace',
-          color: '#4a4a6a',
+          color: 'var(--accent-soft)',
         }}>
           {edu.start_year} — {edu.is_current ? 'Present' : edu.end_year}
         </div>
@@ -78,8 +78,8 @@ function EducationCard({ edu, index }) {
       {edu.is_current && (
         <span style={{
           display: 'inline-block',
-          background: '#1a1a2e',
-          color: '#fff',
+          background: 'var(--text-primary)',
+          color: 'var(--bg-secondary)',
           fontSize: '11px',
           fontFamily: 'Fira Code, monospace',
           padding: '2px 10px',
@@ -94,7 +94,7 @@ function EducationCard({ edu, index }) {
         <p style={{
           fontFamily: 'Fira Code, monospace',
           fontSize: '0.85rem',
-          color: '#9999bb',
+          color: 'var(--text-muted)',
           margin: 0,
         }}>
           Grade: {edu.grade}
@@ -125,7 +125,7 @@ export default function Education() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: '80px',
     }}>
       <Helmet>
@@ -149,7 +149,7 @@ export default function Education() {
           style={{
             textAlign: 'center',
             fontFamily: 'Fira Code, monospace',
-            color: '#9999bb',
+            color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
             marginTop: '-2rem',

@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async'
 function Loader() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>loading...</p>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
     </div>
   )
 }
@@ -14,10 +14,10 @@ function EmptyState() {
   return (
     <div style={{
       textAlign: 'center', padding: '4rem',
-      background: '#fff', borderRadius: '16px',
-      border: '1px dashed #e0e0f0',
+      background: 'var(--bg-secondary)', borderRadius: '16px',
+      border: '1px dashed var(--border)',
     }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>
         no_certifications_found()
       </p>
     </div>
@@ -44,7 +44,7 @@ function CertCard({ cert, index }) {
             objectFit: 'cover',
             borderRadius: '8px',
             marginBottom: '1rem',
-            border: '1px solid #e0e0f0',
+            border: '1px solid var(--border)',
           }}
         />
       )}
@@ -60,7 +60,7 @@ function CertCard({ cert, index }) {
             fontFamily: 'Space Grotesk, sans-serif',
             fontSize: '1rem',
             fontWeight: '600',
-            color: '#1a1a2e',
+            color: 'var(--text-primary)',
             marginBottom: '0.3rem',
           }}>
             {cert.title}
@@ -68,7 +68,7 @@ function CertCard({ cert, index }) {
           <p style={{
             fontFamily: 'Fira Code, monospace',
             fontSize: '0.8rem',
-            color: '#4a4a6a',
+            color: 'var(--accent-soft)',
             margin: 0,
           }}>
             {cert.issuer}
@@ -86,8 +86,8 @@ function CertCard({ cert, index }) {
               gap: '6px',
               padding: '6px 14px',
               borderRadius: '8px',
-              border: '1.5px solid #1a1a2e',
-              color: '#1a1a2e',
+              border: '1.5px solid var(--text-primary)',
+              color: 'var(--text-primary)',
               textDecoration: 'none',
               fontSize: '12px',
               fontFamily: 'Fira Code, monospace',
@@ -95,12 +95,12 @@ function CertCard({ cert, index }) {
               transition: 'all 0.3s',
             }}
             onMouseOver={function (e) {
-              e.currentTarget.style.background = '#1a1a2e'
-              e.currentTarget.style.color = '#fff'
+              e.currentTarget.style.background = 'var(--text-primary)'
+              e.currentTarget.style.color = 'var(--bg-secondary)'
             }}
             onMouseOut={function (e) {
               e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = '#1a1a2e'
+              e.currentTarget.style.color = 'var(--text-primary)'
             }}
           >
             📄 View
@@ -133,7 +133,7 @@ export default function Certification() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: '80px',
     }}>
       <Helmet>
@@ -157,7 +157,7 @@ export default function Certification() {
           style={{
             textAlign: 'center',
             fontFamily: 'Fira Code, monospace',
-            color: '#9999bb',
+            color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
             marginTop: '-2rem',

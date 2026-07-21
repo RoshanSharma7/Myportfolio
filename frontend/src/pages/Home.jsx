@@ -10,8 +10,7 @@ const API = import.meta.env.VITE_API_URL
 const roles = [
   'Full Stack Developer',
   'Python Developer',
-  'Web Developer',
-  'Cricketer & Boxer', 
+  'Boxer', 
 ]
 
 function Typewriter({ words }) {
@@ -36,7 +35,7 @@ function Typewriter({ words }) {
   }, [subIndex, deleting, index, words])
 
   return (
-    <span style={{ color: '#4a4a6a', fontFamily: 'Fira Code, monospace' }}>
+    <span style={{ color: 'var(--accent-soft)', fontFamily: 'Fira Code, monospace' }}>
       {words[index].substring(0, subIndex)}
       <span style={{ animation: 'blink 1s infinite' }}>_</span>
     </span>
@@ -110,7 +109,7 @@ export default function Home() {
   return (
     <div style={{
       position:   'relative',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       overflowX:  'hidden',
       width:      '100%',
     }}>
@@ -137,10 +136,10 @@ export default function Home() {
         position:      'absolute',
         top: 0, left: 0, right: 0, bottom: 0,
         background:    isMobile
-          ? 'rgba(248,249,250,0.62)'
+          ? 'var(--overlay-tint)'
           : isTablet
-            ? 'linear-gradient(90deg, rgba(248,249,250,0.98) 50%, rgba(248,249,250,0.1) 100%)'
-            : 'linear-gradient(90deg, rgba(248,249,250,0.98) 45%, rgba(248,249,250,0.0) 75%)',
+            ? 'linear-gradient(90deg, var(--overlay-strong) 50%, var(--overlay-soft) 100%)'
+            : 'linear-gradient(90deg, var(--overlay-strong) 45%, var(--overlay-clear) 75%)',
         zIndex:        1,
         pointerEvents: 'none',
       }} />
@@ -151,7 +150,7 @@ export default function Home() {
         zIndex:   2,
         maxWidth: '1250px',
         margin:   '0 auto',
-        padding:  isMobile ? '5.5rem 1rem 2rem' : '130px 2rem 1rem',
+        padding:  isMobile ? '5.5rem 1rem 2rem' : '0 2rem 5rem',
         width:    '100%',
       }}>
         <motion.div
@@ -166,8 +165,8 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             style={{
               fontFamily:   'Fira Code, monospace',
-              color:        '#9999bb',
-              fontSize:     isMobile ? 'clamp(0.75rem, 3.2vw, 1rem)' : '0.95rem',
+              color:        'var(--text-muted)',
+              fontSize:     isMobile ? '1rem' : '0.95rem',
               marginBottom: '0.8rem',
               letterSpacing:'2px',
             }}
@@ -182,9 +181,9 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
             style={{
               fontFamily:   'Space Grotesk, sans-serif',
-              fontSize:     isMobile ? 'clamp(2rem, 9.5vw, 3.2rem)' : 'clamp(2.5rem, 7vw, 5rem)',
+              fontSize:     isMobile ? '3rem' : 'clamp(2.5rem, 7vw, 5rem)',
               fontWeight:   '600',
-              color:        '#1a1a2e',
+              color:        'var(--text-primary)',
               lineHeight:   '1.1',
               marginBottom: '0.5rem',
             }}
@@ -199,9 +198,9 @@ export default function Home() {
             transition={{ delay: 0.6 }}
             style={{
               fontFamily:   'Fira Code, monospace',
-              fontSize:     isMobile ? 'clamp(1.05rem, 5vw, 1.5rem)' : 'clamp(1rem, 2.5vw, 1.4rem)',
+              fontSize:     isMobile ? '1.5rem' : 'clamp(1rem, 2.5vw, 1.4rem)',
               fontWeight:   '500',
-              color:        '#9999bb',
+              color:        'var(--text-muted)',
               marginBottom: '1.2rem',
             }}
           >
@@ -214,8 +213,8 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             style={{
-              color:        '#6b6b8a',
-              fontSize:     isMobile ? 'clamp(0.85rem, 3.5vw, 1.05rem)' : '1rem',
+              color:        'var(--text-secondary)',
+              fontSize:     isMobile ? '1.1rem' : '1rem',
               maxWidth:     isMobile ? '100%' : '480px',
               lineHeight:   '1.5',
               marginBottom: '2rem',
@@ -243,8 +242,8 @@ export default function Home() {
                 style={{
                   padding:        isMobile ? '10px 18px' : '11px 26px',
                   borderRadius:   '8px',
-                  background:     '#1a1a2e',
-                  color:          '#fff',
+                  background:     'var(--text-primary)',
+                  color:          'var(--bg-secondary)',
                   fontFamily:     'Fira Code, monospace',
                   fontSize:       isMobile ? '12px' : '13px',
                   fontWeight:     '500',
@@ -272,8 +271,8 @@ export default function Home() {
               padding:        isMobile ? '10px 18px' : '11px 26px',
               borderRadius:   '8px',
               background:     'transparent',
-              border:         '1.5px solid #9999bb',
-              color:          '#4a4a6a',
+              border:         '1.5px solid var(--text-muted)',
+              color:          'var(--accent-soft)',
               fontFamily:     'Fira Code, monospace',
               fontSize:       isMobile ? '12px' : '13px',
               fontWeight:     '500',
@@ -322,11 +321,11 @@ export default function Home() {
                   fontFamily: 'Space Grotesk, sans-serif',
                   fontSize:   isMobile ? '1.8rem' : '2.2rem',
                   fontWeight: '700',
-                  color:      '#1a1a2e',
+                  color:      'var(--text-primary)',
                 }}>{stat.num}</div>
                 <div style={{
                   fontFamily: 'Fira Code, monospace',
-                  color:      '#9999bb',
+                  color:      'var(--text-muted)',
                   fontSize:   '11px',
                 }}>{stat.label}</div>
               </div>
@@ -338,25 +337,14 @@ export default function Home() {
       </div>
       {/* End hero stage */}
 
-      {/* Cards - pinned to hero bottom on desktop, flows naturally below on mobile */}
+      {/* Cards - always flow naturally below the hero, never overlaps it */}
       {(projects.length > 0 || experiences.length > 0) && (
         <div style={{
-          // position:  isMobile ? 'relative' : 'absolute',
-          // bottom:    isMobile ? 'auto' : '0',
-          // left:      isMobile ? 'auto' : '50%',
-          // transform: isMobile ? 'none' : 'translateX(-50%)',
-          // width:     '100%',
-          // maxWidth:  '1250px',
-          // margin:    isMobile ? '0 auto' : 0,
-          // padding:   isMobile ? '0.5rem 1rem 3rem' : '5rem 2rem 0 2rem',
-          // zIndex: 3,
-          // pointerEvents: 'auto',
-
           position:  'relative',
           width:     '100%',
           maxWidth:  '1250px',
           margin:    '0 auto',
-          padding:   isMobile ? '0.5rem 1rem 3rem' : '1rem 2rem 4rem',
+          padding:   isMobile ? '0.5rem 1rem 3rem' : '3rem 2rem 4rem',
           zIndex: 3,
           pointerEvents: 'auto',
         }}>
@@ -374,14 +362,14 @@ export default function Home() {
             {projects.length > 0 && (
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
-                  <h3 style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.8rem', color: '#9999bb', margin: 0, letterSpacing: '1px' }}>
+                  <h3 style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0, letterSpacing: '1px' }}>
                    Latest Project
                   </h3>
                   <div style={{ display: 'flex', gap: '0.3rem' }}>
-                    <button onClick={prevProject} style={{ background: 'rgba(255,255,255,0.9)', border: '1px solid #e0e0f0', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: '#9999bb', transition: 'all 0.3s' }}>
+                    <button onClick={prevProject} style={{ background: 'var(--glass-bg-soft)', border: '1px solid var(--border)', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: 'var(--text-muted)', transition: 'all 0.3s' }}>
                       <FiChevronLeft size={14} />
                     </button>
-                    <button onClick={nextProject} style={{ background: 'rgba(255,255,255,0.9)', border: '1px solid #e0e0f0', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: '#9999bb', transition: 'all 0.3s' }}>
+                    <button onClick={nextProject} style={{ background: 'var(--glass-bg-soft)', border: '1px solid var(--border)', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: 'var(--text-muted)', transition: 'all 0.3s' }}>
                       <FiChevronRight size={14} />
                     </button>
                   </div>
@@ -393,9 +381,9 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   style={{
                     padding: '1.2rem',
-                    background: 'rgba(255, 255, 255, 0.95)',
+                    background: 'var(--glass-bg)',
                     borderRadius: '12px',
-                    border: '1px solid #e0e0f0',
+                    border: '1px solid var(--border)',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                     backdropFilter: 'blur(10px)',
                     minHeight: '215px',
@@ -406,8 +394,8 @@ export default function Home() {
                   <span style={{
                     display: 'inline-block',
                     alignSelf: 'flex-start',
-                    background: projects[projectIndex]?.status === 'completed' ? '#f0f0f8' : '#1a1a2e',
-                    color: projects[projectIndex]?.status === 'completed' ? '#4a4a6a' : '#fff',
+                    background: projects[projectIndex]?.status === 'completed' ? 'var(--badge-bg)' : 'var(--text-primary)',
+                    color: projects[projectIndex]?.status === 'completed' ? 'var(--accent-soft)' : 'var(--bg-secondary)',
                     fontSize: '9px',
                     fontFamily: 'Fira Code, monospace',
                     padding: '2px 8px',
@@ -416,10 +404,10 @@ export default function Home() {
                   }}>
                     {projects[projectIndex]?.status}
                   </span>
-                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.95rem', fontWeight: '600', color: '#1a1a2e', marginBottom: '0.4rem', margin: 0 }}>
+                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '0.4rem', margin: 0 }}>
                     {projects[projectIndex]?.title}
                   </h3>
-                  <p style={{ color: '#6b6b8a', fontSize: '0.8rem', lineHeight: '1.5', margin: '0.4rem 0 0 0' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', margin: '0.4rem 0 0 0' }}>
                     {projects[projectIndex]?.description?.substring(0, 80)}
                     {projects[projectIndex]?.description?.length > 80 ? '...' : ''}
                   </p>
@@ -428,7 +416,7 @@ export default function Home() {
                     paddingTop: '0.8rem',
                     fontFamily: 'Fira Code, monospace',
                     fontSize: '11px',
-                    color: '#1a1a2e',
+                    color: 'var(--text-primary)',
                     fontWeight: '600',
                     textDecoration: 'none',
                     alignSelf: 'flex-start',
@@ -436,7 +424,7 @@ export default function Home() {
                     Show more &rarr;
                   </Link>
                 </motion.div>
-                <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: '#9999bb', textAlign: 'center', marginTop: '0.5rem' }}>
+                <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem' }}>
                   {projectIndex + 1} / {projects.length}
                 </p>
               </div>
@@ -446,14 +434,14 @@ export default function Home() {
             {experiences.length > 0 && (
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
-                  <h3 style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.8rem', color: '#9999bb', margin: 0, letterSpacing: '1px' }}>
+                  <h3 style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0, letterSpacing: '1px' }}>
                     Work Experience
                   </h3>
                   <div style={{ display: 'flex', gap: '0.3rem' }}>
-                    <button onClick={prevExp} style={{ background: 'rgba(255,255,255,0.9)', border: '1px solid #e0e0f0', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: '#9999bb', transition: 'all 0.3s' }}>
+                    <button onClick={prevExp} style={{ background: 'var(--glass-bg-soft)', border: '1px solid var(--border)', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: 'var(--text-muted)', transition: 'all 0.3s' }}>
                       <FiChevronLeft size={14} />
                     </button>
-                    <button onClick={nextExp} style={{ background: 'rgba(255,255,255,0.9)', border: '1px solid #e0e0f0', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: '#9999bb', transition: 'all 0.3s' }}>
+                    <button onClick={nextExp} style={{ background: 'var(--glass-bg-soft)', border: '1px solid var(--border)', borderRadius: '6px', padding: '6px', cursor: 'pointer', color: 'var(--text-muted)', transition: 'all 0.3s' }}>
                       <FiChevronRight size={14} />
                     </button>
                   </div>
@@ -465,9 +453,9 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   style={{
                     padding: '1.2rem',
-                    background: 'rgba(255, 255, 255, 0.95)',
+                    background: 'var(--glass-bg)',
                     borderRadius: '12px',
-                    border: '1px solid #e0e0f0',
+                    border: '1px solid var(--border)',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                     backdropFilter: 'blur(10px)',
                     minHeight: '215px',
@@ -479,8 +467,8 @@ export default function Home() {
                     <span style={{
                       display: 'inline-block',
                       alignSelf: 'flex-start',
-                      background: '#1a1a2e',
-                      color: '#fff',
+                      background: 'var(--text-primary)',
+                      color: 'var(--bg-secondary)',
                       fontSize: '9px',
                       fontFamily: 'Fira Code, monospace',
                       padding: '2px 8px',
@@ -490,13 +478,13 @@ export default function Home() {
                       Current
                     </span>
                   )}
-                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.95rem', fontWeight: '600', color: '#1a1a2e', marginBottom: '0.2rem', margin: 0 }}>
+                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '0.2rem', margin: 0 }}>
                     {experiences[expIndex]?.role}
                   </h3>
-                  <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.8rem', color: '#4a4a6a', marginBottom: '0.4rem', margin: '0.2rem 0 0.4rem 0' }}>
+                  <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.8rem', color: 'var(--accent-soft)', marginBottom: '0.4rem', margin: '0.2rem 0 0.4rem 0' }}>
                     {experiences[expIndex]?.company}
                   </p>
-                  <p style={{ color: '#6b6b8a', fontSize: '0.8rem', lineHeight: '1.5', margin: 0 }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', margin: 0 }}>
                     {experiences[expIndex]?.description?.substring(0, 80)}
                     {experiences[expIndex]?.description?.length > 80 ? '...' : ''}
                   </p>
@@ -505,7 +493,7 @@ export default function Home() {
                     paddingTop: '0.8rem',
                     fontFamily: 'Fira Code, monospace',
                     fontSize: '11px',
-                    color: '#1a1a2e',
+                    color: 'var(--text-primary)',
                     fontWeight: '600',
                     textDecoration: 'none',
                     alignSelf: 'flex-start',
@@ -513,7 +501,7 @@ export default function Home() {
                     Show more &rarr;
                   </Link>
                 </motion.div>
-                <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: '#9999bb', textAlign: 'center', marginTop: '0.5rem' }}>
+                <p style={{ fontFamily: 'Fira Code, monospace', fontSize: '10px', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem' }}>
                   {expIndex + 1} / {experiences.length}
                 </p>
               </div>

@@ -2,6 +2,8 @@ import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer style={{
       background: '#0d0d1a',
@@ -47,8 +49,7 @@ export default function Footer() {
         </div>
 
         <p style={{ color: '#8888aa', fontSize: '12px', fontWeight: 'bold' }}>
-          © {new Date().getFullYear()} — {new Date().toLocaleDateString()} |{" "}
-          {new Date().toLocaleTimeString()} - All rights reserved by Roshan Sharma &lt;RS /&gt;.
+          © {year} - All rights reserved by Roshan Sharma &lt;RS /&gt;.
         </p>
       </div>
     </footer>

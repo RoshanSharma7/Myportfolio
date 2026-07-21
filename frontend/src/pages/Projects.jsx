@@ -8,7 +8,7 @@ const API = import.meta.env.VITE_API_URL
 function Loader() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>loading...</p>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
     </div>
   )
 }
@@ -17,13 +17,13 @@ function EmptyState() {
   return (
     <div style={{
       textAlign: 'center', padding: '4rem',
-      background: '#fff', borderRadius: '16px',
-      border: '1px dashed #e0e0f0',
+      background: 'var(--bg-secondary)', borderRadius: '16px',
+      border: '1px dashed var(--border)',
     }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>
         // print("no projects found")
       </p>
-      <p style={{ color: '#9999bb', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+      <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>
         Add your projects from the admin panel
       </p>
     </div>
@@ -37,9 +37,9 @@ function FilterBtn({ label, active, onClick }) {
       style={{
         padding: '6px 18px',
         borderRadius: '20px',
-        border: '1.5px solid ' + (active ? '#1a1a2e' : '#e0e0f0'),
-        background: active ? '#1a1a2e' : 'transparent',
-        color: active ? '#fff' : '#9999bb',
+        border: '1.5px solid ' + (active ? 'var(--text-primary)' : 'var(--border)'),
+        background: active ? 'var(--text-primary)' : 'transparent',
+        color: active ? 'var(--bg-secondary)' : 'var(--text-muted)',
         fontFamily: 'Fira Code, monospace',
         fontSize: '12px',
         cursor: 'pointer',
@@ -67,8 +67,8 @@ function ProjectCard({ project, index }) {
       {/* Status badge */}
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.8rem' }}>
         <span style={{
-          background: project.status === 'completed' ? '#f0f0f8' : '#1a1a2e',
-          color: project.status === 'completed' ? '#4a4a6a' : '#fff',
+          background: project.status === 'completed' ? 'var(--badge-bg)' : 'var(--text-primary)',
+          color: project.status === 'completed' ? 'var(--accent-soft)' : 'var(--bg-secondary)',
           fontSize: '10px',
           fontFamily: 'Fira Code, monospace',
           padding: '2px 10px',
@@ -89,7 +89,7 @@ function ProjectCard({ project, index }) {
             objectFit: 'cover',
             borderRadius: '8px',
             marginBottom: '1rem',
-            border: '1px solid #e0e0f0',
+            border: '1px solid var(--border)',
           }}
         />
       )}
@@ -99,7 +99,7 @@ function ProjectCard({ project, index }) {
         fontFamily: 'Space Grotesk, sans-serif',
         fontSize: '1.1rem',
         fontWeight: '600',
-        color: '#1a1a2e',
+        color: 'var(--text-primary)',
         marginBottom: '0.5rem',
       }}>
         {project.title}
@@ -107,7 +107,7 @@ function ProjectCard({ project, index }) {
 
       {/* Description */}
       <p style={{
-        color: '#6b6b8a',
+        color: 'var(--text-secondary)',
         fontSize: '0.9rem',
         lineHeight: '1.7',
         marginBottom: '1rem',
@@ -123,8 +123,8 @@ function ProjectCard({ project, index }) {
             <span
               key={tech}
               style={{
-                background: '#f0f0f8',
-                color: '#4a4a6a',
+                background: 'var(--badge-bg)',
+                color: 'var(--accent-soft)',
                 fontSize: '11px',
                 fontFamily: 'Fira Code, monospace',
                 padding: '2px 8px',
@@ -148,14 +148,14 @@ function ProjectCard({ project, index }) {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#1a1a2e',
+              color: 'var(--text-primary)',
               textDecoration: 'none',
               fontSize: '13px',
               fontFamily: 'Fira Code, monospace',
               transition: 'color 0.3s',
             }}
-            onMouseOver={function (e) { e.currentTarget.style.color = '#4a4a6a' }}
-            onMouseOut={function (e) { e.currentTarget.style.color = '#1a1a2e' }}
+            onMouseOver={function (e) { e.currentTarget.style.color = 'var(--accent-soft)' }}
+            onMouseOut={function (e) { e.currentTarget.style.color = 'var(--text-primary)' }}
           >
             <FiGithub /> Code
           </a>
@@ -169,14 +169,14 @@ function ProjectCard({ project, index }) {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#1a1a2e',
+              color: 'var(--text-primary)',
               textDecoration: 'none',
               fontSize: '13px',
               fontFamily: 'Fira Code, monospace',
               transition: 'color 0.3s',
             }}
-            onMouseOver={function (e) { e.currentTarget.style.color = '#4a4a6a' }}
-            onMouseOut={function (e) { e.currentTarget.style.color = '#1a1a2e' }}
+            onMouseOver={function (e) { e.currentTarget.style.color = 'var(--accent-soft)' }}
+            onMouseOut={function (e) { e.currentTarget.style.color = 'var(--text-primary)' }}
           >
             <FiExternalLink /> Live
           </a>
@@ -216,7 +216,7 @@ export default function Projects() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: '80px',
     }}>
       <Helmet>
@@ -240,7 +240,7 @@ export default function Projects() {
           style={{
             textAlign: 'center',
             fontFamily: 'Fira Code, monospace',
-            color: '#9999bb',
+            color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '2rem',
             marginTop: '-2rem',

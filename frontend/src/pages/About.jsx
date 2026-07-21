@@ -39,7 +39,7 @@ function Avatar({ name, imageUrl }) {
           objectFit: 'cover',
           marginBottom: '2rem',
           boxShadow: '0 8px 32px rgba(26,26,46,0.2)',
-          border: '3px solid #1a1a2e',
+          border: '3px solid var(--text-primary)',
         }}
       />
     )
@@ -50,13 +50,13 @@ function Avatar({ name, imageUrl }) {
       width: '140px',
       height: '140px',
       borderRadius: '50%',
-      background: 'linear-gradient(135deg, #1a1a2e, #4a4a6a)',
+      background: 'linear-gradient(135deg, var(--text-primary), var(--accent-soft))',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       marginBottom: '2rem',
       fontSize: '2.5rem',
-      color: '#fff',
+      color: 'var(--bg-secondary)',
       fontFamily: 'Space Grotesk, sans-serif',
       fontWeight: '700',
       boxShadow: '0 8px 32px rgba(26,26,46,0.2)',
@@ -70,7 +70,7 @@ function SectionLabel({ text }) {
   return (
     <p style={{
       fontFamily: 'Fira Code, monospace',
-      color: '#9999bb',
+      color: 'var(--text-muted)',
       fontSize: '0.8rem',
       marginBottom: '1rem',
       letterSpacing: '1px',
@@ -100,22 +100,22 @@ function InfoCard({ profile }) {
               alignItems: 'center',
               gap: '12px',
               padding: '10px 0',
-              borderBottom: '1px solid #f0f0f8',
+              borderBottom: '1px solid var(--badge-bg)',
             }}
           >
-            <item.Icon style={{ color: '#4a4a6a', fontSize: '1rem', flexShrink: 0 }} />
+            <item.Icon style={{ color: 'var(--accent-soft)', fontSize: '1rem', flexShrink: 0 }} />
             <div>
               <p style={{
                 fontFamily: 'Fira Code, monospace',
                 fontSize: '11px',
-                color: '#9999bb',
+                color: 'var(--text-muted)',
                 margin: 0,
               }}>
                 {item.label}
               </p>
               <p style={{
                 fontSize: '14px',
-                color: '#1a1a2e',
+                color: 'var(--text-primary)',
                 fontWeight: '500',
                 margin: 0,
               }}>
@@ -151,20 +151,20 @@ function LinksCard({ links }) {
                 gap: '8px',
                 padding: '8px 16px',
                 borderRadius: '8px',
-                border: '1.5px solid #1a1a2e',
-                color: '#1a1a2e',
+                border: '1.5px solid var(--text-primary)',
+                color: 'var(--text-primary)',
                 textDecoration: 'none',
                 fontSize: '13px',
                 fontFamily: 'Fira Code, monospace',
                 transition: 'all 0.3s',
               }}
               onMouseOver={function(e) {
-                e.currentTarget.style.background = '#1a1a2e'
-                e.currentTarget.style.color = '#fff'
+                e.currentTarget.style.background = 'var(--text-primary)'
+                e.currentTarget.style.color = 'var(--bg-secondary)'
               }}
               onMouseOut={function(e) {
                 e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = '#1a1a2e'
+                e.currentTarget.style.color = 'var(--text-primary)'
               }}
             >
               <Icon /> {link.name}
@@ -200,7 +200,7 @@ function StatsCard({ profile }) {
               style={{
                 textAlign: 'center',
                 padding: '1rem',
-                background: '#f8f9fa',
+                background: 'var(--bg-primary)',
                 borderRadius: '8px',
               }}
             >
@@ -208,7 +208,7 @@ function StatsCard({ profile }) {
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontSize: '1.8rem',
                 fontWeight: '700',
-                color: '#1a1a2e',
+                color: 'var(--text-primary)',
                 margin: 0,
               }}>
                 {stat.num}
@@ -216,7 +216,7 @@ function StatsCard({ profile }) {
               <p style={{
                 fontFamily: 'Fira Code, monospace',
                 fontSize: '11px',
-                color: '#9999bb',
+                color: 'var(--text-muted)',
                 margin: 0,
               }}>
                 {stat.label}
@@ -239,7 +239,7 @@ function Loader() {
     }}>
       <p style={{
         fontFamily: 'Fira Code, monospace',
-        color: '#9999bb',
+        color: 'var(--text-muted)',
         fontSize: '0.9rem',
       }}>
         loading...
@@ -290,7 +290,7 @@ export default function About() {
     
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: '80px',
       display: 'flex',
       alignItems: 'center',
@@ -303,7 +303,7 @@ export default function About() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: isMobile ? '30px':'50px',
     }}>
       <Helmet>
@@ -342,7 +342,7 @@ export default function About() {
               fontFamily: 'Space Grotesk, sans-serif',
               fontSize: '1.8rem',
               fontWeight: '700',
-              color: '#1a1a2e',
+              color: 'var(--text-primary)',
               marginBottom: '0.5rem',
             }}>
               {profile ? profile.name : 'Your Name'}
@@ -350,7 +350,7 @@ export default function About() {
 
             <p style={{
               fontFamily: 'Fira Code, monospace',
-              color: '#9999bb',
+              color: 'var(--text-muted)',
               fontSize: '0.9rem',
               marginBottom: '1.5rem',
             }}>
@@ -358,7 +358,7 @@ export default function About() {
             </p>
 
             <p style={{
-              color: '#6b6b8a',
+              color: 'var(--text-secondary)',
               lineHeight: '1.9',
               fontSize: '0.95rem',
               marginBottom: '2rem',
@@ -377,9 +377,9 @@ export default function About() {
                   gap: '8px',
                   padding: '12px 24px',
                   borderRadius: '8px',
-                  border: '1.5px solid #1a1a2e',
-                  background: '#1a1a2e',
-                  color: '#fff',
+                  border: '1.5px solid var(--text-primary)',
+                  background: 'var(--text-primary)',
+                  color: 'var(--bg-secondary)',
                   textDecoration: 'none',
                   fontFamily: 'Fira Code, monospace',
                   fontSize: '13px',

@@ -50,11 +50,11 @@ function ContactForm() {
     width:        '100%',
     padding:      '12px 16px',
     borderRadius: '8px',
-    border:       '1.5px solid #e0e0f0',
-    background:   '#fff',
+    border:       '1.5px solid var(--border)',
+    background:   'var(--bg-secondary)',
     fontFamily:   'Fira Code, monospace',
     fontSize:     '13px',
-    color:        '#1a1a2e',
+    color:        'var(--text-primary)',
     outline:      'none',
     transition:   'border-color 0.3s',
     boxSizing:    'border-box',
@@ -63,7 +63,7 @@ function ContactForm() {
   const labelStyle = {
     fontFamily:    'Fira Code, monospace',
     fontSize:      '12px',
-    color:         '#9999bb',
+    color:         'var(--text-muted)',
     marginBottom:  '6px',
     display:       'block',
     letterSpacing: '0.5px',
@@ -73,7 +73,7 @@ function ContactForm() {
     <div className="card">
       <p style={{
         fontFamily:    'Fira Code, monospace',
-        color:         '#9999bb',
+        color:         'var(--text-muted)',
         fontSize:      '0.8rem',
         marginBottom:  '1.5rem',
         letterSpacing: '1px',
@@ -91,8 +91,8 @@ function ContactForm() {
           onChange={handleChange}
           placeholder="Your name"
           style={inputStyle}
-          onFocus={function(e)  { e.target.style.borderColor = '#1a1a2e' }}
-          onBlur={function(e)   { e.target.style.borderColor = '#e0e0f0' }}
+          onFocus={function(e)  { e.target.style.borderColor = 'var(--text-primary)' }}
+          onBlur={function(e)   { e.target.style.borderColor = 'var(--border)' }}
         />
       </div>
 
@@ -105,8 +105,8 @@ function ContactForm() {
           onChange={handleChange}
           placeholder="your@email.com"
           style={inputStyle}
-          onFocus={function(e)  { e.target.style.borderColor = '#1a1a2e' }}
-          onBlur={function(e)   { e.target.style.borderColor = '#e0e0f0' }}
+          onFocus={function(e)  { e.target.style.borderColor = 'var(--text-primary)' }}
+          onBlur={function(e)   { e.target.style.borderColor = 'var(--border)' }}
         />
       </div>
 
@@ -119,8 +119,8 @@ function ContactForm() {
           placeholder="Your message..."
           rows={5}
           style={{ ...inputStyle, resize: 'vertical' }}
-          onFocus={function(e)  { e.target.style.borderColor = '#1a1a2e' }}
-          onBlur={function(e)   { e.target.style.borderColor = '#e0e0f0' }}
+          onFocus={function(e)  { e.target.style.borderColor = 'var(--text-primary)' }}
+          onBlur={function(e)   { e.target.style.borderColor = 'var(--border)' }}
         />
       </div>
 
@@ -132,8 +132,8 @@ function ContactForm() {
           padding:      '12px',
           borderRadius: '8px',
           border:       'none',
-          background:   sending ? '#9999bb' : '#1a1a2e',
-          color:        '#fff',
+          background:   sending ? 'var(--text-muted)' : 'var(--text-primary)',
+          color:        'var(--bg-secondary)',
           fontFamily:   'Fira Code, monospace',
           fontSize:     '14px',
           cursor:       sending ? 'not-allowed' : 'pointer',
@@ -154,7 +154,7 @@ function ContactInfo({ profile, links }) {
       <div className="card">
         <p style={{
           fontFamily:    'Fira Code, monospace',
-          color:         '#9999bb',
+          color:         'var(--text-muted)',
           fontSize:      '0.8rem',
           marginBottom:  '1rem',
           letterSpacing: '1px',
@@ -166,24 +166,24 @@ function ContactInfo({ profile, links }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
             {profile.email && (
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <FiMail style={{ color: '#4a4a6a', flexShrink: 0 }} />
-                <p style={{ margin: 0, fontSize: '14px', color: '#1a1a2e', fontFamily: 'Fira Code, monospace' }}>
+                <FiMail style={{ color: 'var(--accent-soft)', flexShrink: 0 }} />
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'Fira Code, monospace' }}>
                   {profile.email}
                 </p>
               </div>
             )}
             {profile.phone && (
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <FiPhone style={{ color: '#4a4a6a', flexShrink: 0 }} />
-                <p style={{ margin: 0, fontSize: '14px', color: '#1a1a2e', fontFamily: 'Fira Code, monospace' }}>
+                <FiPhone style={{ color: 'var(--accent-soft)', flexShrink: 0 }} />
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'Fira Code, monospace' }}>
                   {profile.phone}
                 </p>
               </div>
             )}
             {profile.location && (
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <FiMapPin style={{ color: '#4a4a6a', flexShrink: 0 }} />
-                <p style={{ margin: 0, fontSize: '14px', color: '#1a1a2e', fontFamily: 'Fira Code, monospace' }}>
+                <FiMapPin style={{ color: 'var(--accent-soft)', flexShrink: 0 }} />
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'Fira Code, monospace' }}>
                   {profile.location}
                 </p>
               </div>
@@ -197,7 +197,7 @@ function ContactInfo({ profile, links }) {
         <div className="card">
           <p style={{
             fontFamily:    'Fira Code, monospace',
-            color:         '#9999bb',
+            color:         'var(--text-muted)',
             fontSize:      '0.8rem',
             marginBottom:  '1rem',
             letterSpacing: '1px',
@@ -219,20 +219,20 @@ function ContactInfo({ profile, links }) {
                     gap:            '8px',
                     padding:        '8px 16px',
                     borderRadius:   '8px',
-                    border:         '1.5px solid #1a1a2e',
-                    color:          '#1a1a2e',
+                    border:         '1.5px solid var(--text-primary)',
+                    color:          'var(--text-primary)',
                     textDecoration: 'none',
                     fontSize:       '13px',
                     fontFamily:     'Fira Code, monospace',
                     transition:     'all 0.3s',
                   }}
                   onMouseOver={function(e) {
-                    e.currentTarget.style.background = '#1a1a2e'
-                    e.currentTarget.style.color      = '#fff'
+                    e.currentTarget.style.background = 'var(--text-primary)'
+                    e.currentTarget.style.color      = 'var(--bg-secondary)'
                   }}
                   onMouseOut={function(e) {
                     e.currentTarget.style.background = 'transparent'
-                    e.currentTarget.style.color      = '#1a1a2e'
+                    e.currentTarget.style.color      = 'var(--text-primary)'
                   }}
                 >
                   <Icon /> {link.name}
@@ -277,7 +277,7 @@ export default function Contact() {
   return (
     <div style={{
       minHeight:  '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop: '80px',
     }}>
       <Helmet>
@@ -300,7 +300,7 @@ export default function Contact() {
           style={{
             textAlign:    'center',
             fontFamily:   'Fira Code, monospace',
-            color:        '#9999bb',
+            color:        'var(--text-muted)',
             fontSize:     '0.85rem',
             marginBottom: '3rem',
             marginTop:    '-2rem',

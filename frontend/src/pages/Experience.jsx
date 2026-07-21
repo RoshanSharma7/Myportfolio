@@ -13,7 +13,7 @@ function formatDate(dateStr) {
 function Loader() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>loading...</p>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
     </div>
   )
 }
@@ -22,10 +22,10 @@ function EmptyState() {
   return (
     <div style={{
       textAlign: 'center', padding: '4rem',
-      background: '#fff', borderRadius: '16px',
-      border: '1px dashed #e0e0f0',
+      background: 'var(--bg-secondary)', borderRadius: '16px',
+      border: '1px dashed var(--border)',
     }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: '#9999bb' }}>
+      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>
         no_experience_found()
       </p>
     </div>
@@ -47,13 +47,13 @@ function ExperienceCard({ exp, index }) {
         <div style={{
           width: '14px', height: '14px',
           borderRadius: '50%',
-          background: exp.is_current ? '#1a1a2e' : '#9999bb',
-          border: '2px solid #1a1a2e',
+          background: exp.is_current ? 'var(--text-primary)' : 'var(--text-muted)',
+          border: '2px solid var(--text-primary)',
           marginTop: '6px', flexShrink: 0,
         }} />
         <div style={{
           width: '2px', flex: 1,
-          background: '#e0e0f0',
+          background: 'var(--border)',
           marginTop: '6px',
         }} />
       </div>
@@ -68,13 +68,13 @@ function ExperienceCard({ exp, index }) {
             <h3 style={{
               fontFamily: 'Space Grotesk, sans-serif',
               fontSize: '1.1rem', fontWeight: '600',
-              color: '#1a1a2e', marginBottom: '0.2rem',
+              color: 'var(--text-primary)', marginBottom: '0.2rem',
             }}>
               {exp.role}
             </h3>
             <p style={{
               fontFamily: 'Fira Code, monospace',
-              fontSize: '0.85rem', color: '#4a4a6a', margin: 0,
+              fontSize: '0.85rem', color: 'var(--accent-soft)', margin: 0,
             }}>
               {exp.company}
               {exp.location ? ' · ' + exp.location : ''}
@@ -82,10 +82,10 @@ function ExperienceCard({ exp, index }) {
           </div>
 
           <div style={{
-            background: '#f0f0f8', borderRadius: '20px',
+            background: 'var(--badge-bg)', borderRadius: '20px',
             padding: '4px 12px', fontSize: '12px',
             fontFamily: 'Fira Code, monospace',
-            color: '#4a4a6a', whiteSpace: 'nowrap',
+            color: 'var(--accent-soft)', whiteSpace: 'nowrap',
           }}>
             {formatDate(exp.start_date)} — {exp.is_current ? 'Present' : formatDate(exp.end_date)}
           </div>
@@ -93,8 +93,8 @@ function ExperienceCard({ exp, index }) {
 
         {exp.is_current && (
           <span style={{
-            display: 'inline-block', background: '#1a1a2e',
-            color: '#fff', fontSize: '11px',
+            display: 'inline-block', background: 'var(--text-primary)',
+            color: 'var(--bg-secondary)', fontSize: '11px',
             fontFamily: 'Fira Code, monospace',
             padding: '2px 10px', borderRadius: '20px',
             marginBottom: '0.8rem',
@@ -104,7 +104,7 @@ function ExperienceCard({ exp, index }) {
         )}
 
         <p style={{
-          color: '#6b6b8a', lineHeight: '1.8',
+          color: 'var(--text-secondary)', lineHeight: '1.8',
           fontSize: '0.9rem', margin: 0,
         }}>
           {exp.description}
@@ -135,7 +135,7 @@ export default function Experience() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #eeeef8 100%)',
+      background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
       paddingTop:  '80px',
     }}>
       <Helmet>
@@ -159,7 +159,7 @@ export default function Experience() {
           style={{
             textAlign: 'center',
             fontFamily: 'Fira Code, monospace',
-            color: '#9999bb',
+            color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
             marginTop: '-2rem',
