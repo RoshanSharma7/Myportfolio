@@ -278,7 +278,6 @@ export default function Contact() {
     <div style={{
       minHeight:  '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: '80px',
     }}>
       <Helmet>
         <title>Contact - Roshan Sharma </title>
@@ -306,7 +305,7 @@ export default function Contact() {
             marginTop:    '-2rem',
           }}
         >
-          // print("get in touch")
+          print("form and contact info")
         </motion.p>
 
         <div style={{

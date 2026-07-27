@@ -136,7 +136,6 @@ export default function Experience() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop:  '80px',
     }}>
       <Helmet>
         <title>Experience - Roshan Sharma </title>
@@ -165,7 +164,7 @@ export default function Experience() {
             marginTop: '-2rem',
           }}
         >
-          // print("my work history")
+          print("my work experience and professional journey")
         </motion.p>
 
         {loading ? (

@@ -134,7 +134,6 @@ export default function Certification() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: '80px',
     }}>
       <Helmet>
         <title>Certification - Roshan Sharma </title>
@@ -163,7 +162,7 @@ export default function Certification() {
             marginTop: '-2rem',
           }}
         >
-          // print("my certifications and achievements")
+          print("my certifications and achievements")
         </motion.p>
 
         {loading ? (

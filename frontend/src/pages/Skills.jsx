@@ -174,7 +174,6 @@ export default function Skills() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: '80px',
     }}>
       <Helmet>
         <title>Skills - Roshan Sharma </title>
@@ -203,7 +202,7 @@ export default function Skills() {
             marginTop: '-2rem',
           }}
         >
-          // print("technologies I work with")
+          print("my technologies and tools")
         </motion.p>
 
         {loading ? (

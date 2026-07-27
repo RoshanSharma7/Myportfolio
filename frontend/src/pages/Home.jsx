@@ -10,7 +10,8 @@ const API = import.meta.env.VITE_API_URL
 const roles = [
   'Full Stack Developer',
   'Python Developer',
-  'Boxer', 
+  'Web Developer',
+  'Boxer & Cricketer', 
 ]
 
 function Typewriter({ words }) {
@@ -166,7 +167,7 @@ export default function Home() {
             style={{
               fontFamily:   'Fira Code, monospace',
               color:        'var(--text-muted)',
-              fontSize:     isMobile ? '1rem' : '0.95rem',
+              fontSize:     isMobile ? 'clamp(0.75rem, 3.2vw, 1rem)' : '0.95rem',
               marginBottom: '0.8rem',
               letterSpacing:'2px',
             }}
@@ -181,7 +182,7 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
             style={{
               fontFamily:   'Space Grotesk, sans-serif',
-              fontSize:     isMobile ? '3rem' : 'clamp(2.5rem, 7vw, 5rem)',
+              fontSize:     isMobile ? 'clamp(2rem, 9.5vw, 3.2rem)' : 'clamp(2.5rem, 7vw, 5rem)',
               fontWeight:   '600',
               color:        'var(--text-primary)',
               lineHeight:   '1.1',
@@ -198,7 +199,7 @@ export default function Home() {
             transition={{ delay: 0.6 }}
             style={{
               fontFamily:   'Fira Code, monospace',
-              fontSize:     isMobile ? '1.5rem' : 'clamp(1rem, 2.5vw, 1.4rem)',
+              fontSize:     isMobile ? 'clamp(1.05rem, 5vw, 1.5rem)' : 'clamp(1rem, 2.5vw, 1.4rem)',
               fontWeight:   '500',
               color:        'var(--text-muted)',
               marginBottom: '1.2rem',
@@ -214,7 +215,7 @@ export default function Home() {
             transition={{ delay: 0.8 }}
             style={{
               color:        'var(--text-secondary)',
-              fontSize:     isMobile ? '1.1rem' : '1rem',
+              fontSize:     isMobile ? 'clamp(0.85rem, 3.5vw, 1.05rem)' : '1rem',
               maxWidth:     isMobile ? '100%' : '480px',
               lineHeight:   '1.5',
               marginBottom: '2rem',

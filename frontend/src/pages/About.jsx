@@ -291,7 +291,6 @@ export default function About() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: '80px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -307,7 +306,7 @@ export default function About() {
       paddingTop: isMobile ? '30px':'50px',
     }}>
       <Helmet>
-        <title>Home - Roshan Sharma </title>
+        <title>About - Roshan Sharma </title>
       </Helmet>
       <div className="section">
 
@@ -319,6 +318,22 @@ export default function About() {
         >
           About Me
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          style={{
+            textAlign: 'center',
+            fontFamily: 'Fira Code, monospace',
+            color: 'var(--text-muted)',
+            fontSize: '0.85rem',
+            marginBottom: '3rem',
+            marginTop: '-2rem',
+          }}
+        >
+          print("my about information, personal info, and links")
+        </motion.p>
 
         <div style={{
           display: 'grid',

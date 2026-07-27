@@ -126,7 +126,6 @@ export default function Education() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: '80px',
     }}>
       <Helmet>
         <title>Education - Roshan Sharma </title>
@@ -155,7 +154,7 @@ export default function Education() {
             marginTop: '-2rem',
           }}
         >
-          // print("my academic background")
+          print("my academic background")
         </motion.p>
 
         {loading ? (

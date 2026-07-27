@@ -1,12 +1,10 @@
 import { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
+import { useGLTF, Environment, ContactShadows, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
 const MODELS = [
-  { url: '/models/laptop.glb',  desktopSize: 5, mobileSize: 3 },
-  { url: '/models/cricket.glb', desktopSize: 6.5, mobileSize: 4.7 },
-  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 3.5 },
+  { url: '/models/setup.glb',  desktopSize: 5, mobileSize: 1.5 },
 ]
 
 function SingleModel({ url, size, onComplete }) {
@@ -83,22 +81,22 @@ export default function Background3D() {
 
   return (
     <div style={{
-      position:      isMobile ? 'fixed': 'absolute',
-      top:           isMobile ? '50%'  : '0',
+      position:      isMobile ? 'fixed' : 'absolute',
+      top:           isMobile ? '50%' : '0',
       left:          isMobile ? '50%'  : 'auto',
       right:         isMobile ? 'auto' : '0',
       transform:     isMobile ? 'translate(-50%, -50%)' : 'none',
-      width:         isMobile ? '100%' : '55%',
-      height:        isMobile ? '80%'  : '100%',
+      width:         isMobile ? '62%'  : '55%',
+      height:        isMobile ? '30%'  : '100%',
       zIndex:        0,
-      pointerEvents: 'none',
+      pointerEvents: isMobile ? 'none' : 'auto',
       opacity:       fade,
       transition:    'opacity 0.5s ease',
     }}>
       <Canvas
         camera={{
-          position: [0, 1, isMobile ? 6 : 10],
-          fov:      isMobile ? 60 : 50,
+          position: [0, 1, isMobile ? 7 : 10],
+          fov:      isMobile ? 55 : 50,
         }}
         style={{ background: 'transparent' }}
       >
@@ -125,11 +123,19 @@ export default function Background3D() {
             color="#1a1a2e"
           />
         </Suspense>
+
+        {!isMobile && (
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            enableDamping
+            dampingFactor={0.08}
+            rotateSpeed={0.6}
+          />
+        )}
       </Canvas>
     </div>
   )
 }
 
-useGLTF.preload('/models/laptop.glb')
-useGLTF.preload('/models/cricket.glb')
-useGLTF.preload('/models/Box_01.glb')
+useGLTF.preload('/models/setup.glb')

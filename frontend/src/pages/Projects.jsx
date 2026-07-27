@@ -217,7 +217,6 @@ export default function Projects() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: '80px',
     }}>
       <Helmet>
         <title>Projects - Roshan Sharma </title>
@@ -246,7 +245,7 @@ export default function Projects() {
             marginTop: '-2rem',
           }}
         >
-          // print("things I have built")
+          print("my personal and professional projects")
         </motion.p>
 
         {/* Filter buttons */}
