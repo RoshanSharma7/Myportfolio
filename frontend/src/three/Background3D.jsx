@@ -4,7 +4,9 @@ import { useGLTF, Environment, ContactShadows, OrbitControls } from '@react-thre
 import * as THREE from 'three'
 
 const MODELS = [
-  { url: '/models/setup.glb',  desktopSize: 5, mobileSize: 1.5 },
+  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 1.5 },
+  { url: '/models/cricket.glb', desktopSize: 6, mobileSize: 1.7 },
+  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 1.5 },
 ]
 
 function SingleModel({ url, size, onComplete }) {
@@ -138,4 +140,6 @@ export default function Background3D() {
   )
 }
 
-useGLTF.preload('/models/setup.glb')
+useGLTF.preload('/models/laptop.glb')
+useGLTF.preload('/models/cricket.glb')
+useGLTF.preload('/models/Box_01.glb')
