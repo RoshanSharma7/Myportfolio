@@ -4,9 +4,15 @@ import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 
 const MODELS = [
+<<<<<<< HEAD
   { url: '/models/laptop.glb',  desktopSize: 5, mobileSize: 4 },
   { url: '/models/cricket.glb', desktopSize: 6.5, mobileSize: 4.7 },
   { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 3.5 },
+=======
+  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 6.5 },
+  { url: '/models/cricket.glb', desktopSize: 6, mobileSize: 7 },
+  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 7 },
+>>>>>>> 6fc5e948d2a37629a9d2ef5ef3b774ab23fbbd0f
 ]
 
 function SingleModel({ url, size, onComplete }) {
