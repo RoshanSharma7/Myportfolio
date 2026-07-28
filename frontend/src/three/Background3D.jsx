@@ -4,9 +4,9 @@ import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 
 const MODELS = [
-  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 5 },
-  { url: '/models/cricket.glb', desktopSize: 4, mobileSize: 7 },
-  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 8 },
+  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 4 },
+  { url: '/models/cricket.glb', desktopSize: 4, mobileSize: 6 },
+  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 6 },
 ]
 
 function SingleModel({ url, size, onComplete }) {
@@ -16,11 +16,9 @@ function SingleModel({ url, size, onComplete }) {
 
   useEffect(() => {
     if (!scene || !ref.current) return
-
     while (ref.current.children.length) {
       ref.current.remove(ref.current.children[0])
     }
-
     const clone  = scene.clone(true)
     const box    = new THREE.Box3().setFromObject(clone)
     const s      = new THREE.Vector3()
@@ -28,11 +26,9 @@ function SingleModel({ url, size, onComplete }) {
     const maxDim = Math.max(s.x, s.y, s.z)
     const scale  = size / maxDim
     clone.scale.setScalar(scale)
-
     const center = new THREE.Vector3()
     box.getCenter(center)
     clone.position.sub(center.multiplyScalar(scale))
-
     ref.current.add(clone)
     rotated.current = 0
   }, [scene, size])
@@ -83,7 +79,7 @@ export default function Background3D() {
 
   return (
     <div style={{
-      position:      'absolute',
+      position:      isMobile ? 'fixed' : 'absolute',
       top:           isMobile ? '50%'  : '0',
       left:          isMobile ? '50%'  : 'auto',
       right:         isMobile ? 'auto' : '0',
@@ -108,7 +104,6 @@ export default function Background3D() {
         <pointLight position={[0, 5, 10]}  intensity={isMobile ? 5 : 3} />
         <pointLight position={[0, -5, 5]}  intensity={isMobile ? 4 : 2} />
         <Environment preset="studio" />
-
         <Suspense fallback={null}>
           <SingleModel
             key={currentModel.url + currentSize}
