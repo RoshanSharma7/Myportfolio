@@ -4,15 +4,9 @@ import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 
 const MODELS = [
-<<<<<<< HEAD
-  { url: '/models/laptop.glb',  desktopSize: 5, mobileSize: 4 },
-  { url: '/models/cricket.glb', desktopSize: 6.5, mobileSize: 4.7 },
-  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 3.5 },
-=======
-  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 6.5 },
-  { url: '/models/cricket.glb', desktopSize: 6, mobileSize: 7 },
-  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 7 },
->>>>>>> 6fc5e948d2a37629a9d2ef5ef3b774ab23fbbd0f
+  { url: '/models/laptop.glb',  desktopSize: 4, mobileSize: 5 },
+  { url: '/models/cricket.glb', desktopSize: 6, mobileSize: 6 },
+  { url: '/models/Box_01.glb',  desktopSize: 5, mobileSize: 5.5 },
 ]
 
 function SingleModel({ url, size, onComplete }) {
@@ -89,13 +83,13 @@ export default function Background3D() {
 
   return (
     <div style={{
-      position:      isMobile ? 'fixed': 'absolute',
-      top:           isMobile ? '50%'  : '0',
+      position:      isMobile ? 'fixed' : 'absolute',
+      top:           isMobile ? '50%' : '0',
       left:          isMobile ? '50%'  : 'auto',
       right:         isMobile ? 'auto' : '0',
       transform:     isMobile ? 'translate(-50%, -50%)' : 'none',
-      width:         isMobile ? '100%' : '55%',
-      height:        isMobile ? '80%'  : '100%',
+      width:         isMobile ? '62%'  : '55%',
+      height:        isMobile ? '30%'  : '100%',
       zIndex:        0,
       pointerEvents: 'none',
       opacity:       fade,
@@ -103,8 +97,42 @@ export default function Background3D() {
     }}>
       <Canvas
         camera={{
-          position: [0, 1, isMobile ? 6 : 10],
-          fov:      isMobile ? 60 : 50,
+          position: [0, 1, isMobile ? 7 : 10],
+          fov:      isMobile ? 55 : 50,
+        }}
+        style={{ background: 'transparent' }}
+      >
+        <ambientLight intensity={isMobile ? 7 : 5} />
+        <spotLight position={[10, 10, 10]} intensity={isMobile ? 6 : 4} castShadow />
+        <spotLight position={[-10, 8, 5]}  intensity={isMobile ? 5 : 3} />
+        <pointLight position={[0, 5, 10]}  intensity={isMobile ? 5 : 3} />
+        <pointLight position={[0, -5, 5]}  intensity={isMobile ? 4 : 2} />
+        <Environment preset="studio" />
+
+        <Suspense fallback={null}>
+          <SingleModel
+            key={currentModel.url + currentSize}
+            url={currentModel.url}
+            size={currentSize}
+            onComplete={handleComplete}
+          />
+          <ContactShadows
+            position={[0, -3, 0]}
+            opacity={0.4}
+            scale={20}
+            blur={2}
+            far={5}
+            color="#1a1a2e"
+          />
+        </Suspense>
+      </Canvas>
+    </div>
+  )
+}
+
+useGLTF.preload('/models/laptop.glb')
+useGLTF.preload('/models/cricket.glb')
+useGLTF.preload('/models/Box_01.glb')          fov:      isMobile ? 60 : 50,
         }}
         style={{ background: 'transparent' }}
       >
