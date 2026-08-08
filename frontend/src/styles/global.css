@@ -27,6 +27,7 @@
   --glass-bg-soft: rgba(255,255,255,0.9);
   --shadow:        0 4px 24px rgba(0,0,0,0.08);
   --shadow-hover:  0 8px 40px rgba(0,0,0,0.15);
+  --glass-bg-light: rgba(255,255,255,0.45);
 }
 
 [data-theme="dark"] {
@@ -50,6 +51,7 @@
   --glass-bg-soft: rgba(20,20,42,0.9);
   --shadow:        0 4px 24px rgba(0,0,0,0.4);
   --shadow-hover:  0 8px 40px rgba(0,0,0,0.55);
+  --glass-bg-light: rgba(20,20,42,0.45);
 }
 
 html { scroll-behavior: smooth; }

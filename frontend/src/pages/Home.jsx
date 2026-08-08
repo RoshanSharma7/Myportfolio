@@ -382,7 +382,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   style={{
                     padding: '1.2rem',
-                    background: 'var(--glass-bg)',
+                    background: 'var(--glass-bg-light)',
                     borderRadius: '12px',
                     border: '1px solid var(--border)',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
@@ -454,7 +454,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   style={{
                     padding: '1.2rem',
-                    background: 'var(--glass-bg)',
+                    background: 'var(--glass-bg-light)',
                     borderRadius: '12px',
                     border: '1px solid var(--border)',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
