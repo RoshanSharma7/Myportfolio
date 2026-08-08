@@ -41,7 +41,7 @@ function CertCard({ cert, index }) {
           style={{
             width: '100%',
             height: '220px',
-            objectFit: 'cover',
+            objectFit: 'contain',
             borderRadius: '8px',
             marginBottom: '1rem',
             border: '1px solid var(--border)',
