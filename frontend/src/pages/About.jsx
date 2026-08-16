@@ -8,6 +8,7 @@ import {
   FiMail, FiMapPin, FiPhone, FiCode,
 } from 'react-icons/fi'
 import { Helmet } from 'react-helmet-async'
+import { SkeletonBox, SkeletonCircle, SkeletonCardGrid } from '../components/Skeleton'
 
 const API = import.meta.env.VITE_API_URL
 
@@ -231,19 +232,26 @@ function StatsCard({ profile }) {
 
 function Loader() {
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '60vh',
-    }}>
-      <p style={{
-        fontFamily: 'Fira Code, monospace',
-        color: 'var(--text-muted)',
-        fontSize: '0.9rem',
-      }}>
-        loading...
-      </p>
+     <div style={{ maxWidth: '900px', margin: '0 auto', padding: '2rem 1rem' }}>
+      <SkeletonCircle size="140px" style={{ marginBottom: '2rem' }} />
+      <SkeletonBox width="260px" height="2.2rem" style={{ marginBottom: '0.75rem' }} />
+      <SkeletonBox width="160px" height="1rem" style={{ marginBottom: '2rem' }} />
+      <SkeletonBox width="100%" height="0.9rem" style={{ marginBottom: '0.5rem' }} />
+      <SkeletonBox width="90%" height="0.9rem" style={{ marginBottom: '0.5rem' }} />
+      <SkeletonBox width="70%" height="0.9rem" style={{ marginBottom: '2rem' }} />
+      <SkeletonBox width="180px" height="2.8rem" radius="8px" style={{ marginBottom: '2.5rem' }} />
+
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <SkeletonBox width="140px" height="1rem" />
+        {[1, 2, 3].map(function(i) {
+          return (
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+              <SkeletonBox width="80px" height="0.7rem" />
+              <SkeletonBox width="200px" height="1rem" />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -303,7 +311,7 @@ export default function About() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%)',
-      paddingTop: isMobile ? '30px':'50px',
+      // paddingTop: isMobile ? '30px':'50px',
     }}>
       <Helmet>
         <title>About - Roshan Sharma </title>
@@ -315,6 +323,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          style={{ marginBottom: '0.75rem' }}
         >
           About Me
         </motion.h2>
@@ -329,7 +338,7 @@ export default function About() {
             color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
-            marginTop: '-2rem',
+            marginTop: 0,
           }}
         >
           print("my about information, personal info, and links")

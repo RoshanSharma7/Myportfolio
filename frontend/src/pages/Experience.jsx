@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import { Helmet } from 'react-helmet-async'
+import { SkeletonTimelineCard} from '../components/SkeletonTimelineCard.jsx'
 const API = import.meta.env.VITE_API_URL
 
 function formatDate(dateStr) {
@@ -12,8 +13,10 @@ function formatDate(dateStr) {
 
 function Loader() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
+    <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      <SkeletonTimelineCard />
+      <SkeletonTimelineCard />
+      <SkeletonTimelineCard />
     </div>
   )
 }

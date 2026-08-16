@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { getCertifications } from '../api/certification'
 import { Helmet } from 'react-helmet-async'
+import { SkeletonCardGrid } from '../components/Skeleton'
+
 function Loader() {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
-    </div>
-  )
+  return <SkeletonCardGrid count={4} minColWidth="340px" imageHeight="220px" />
 }
 
 function EmptyState() {

@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import { Helmet } from 'react-helmet-async'
+import { SkeletonBox, SkeletonChipRow } from '../components/Skeleton.jsx'
 const API = import.meta.env.VITE_API_URL
 
 function Loader() {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-      <p style={{ fontFamily: 'Fira Code, monospace', color: 'var(--text-muted)' }}>loading...</p>
+  return(
+    <div>
+      <SkeletonBox width="180px" height="1.2rem" style={{ marginBottom: '1rem' }} />
+      <SkeletonChipRow count={5} />
+      <SkeletonBox width="220px" height="1.2rem" style={{ marginBottom: '1rem' }} />
+      <SkeletonChipRow count={4} />
     </div>
   )
 }
