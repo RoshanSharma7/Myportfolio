@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import { Helmet } from 'react-helmet-async'
-import { SkeletonTimelineCard} from '../components/SkeletonTimelineCard.jsx'
+import { SkeletonTimelineCard} from '../components/Skeleton'
 const API = import.meta.env.VITE_API_URL
 
 function Loader() {

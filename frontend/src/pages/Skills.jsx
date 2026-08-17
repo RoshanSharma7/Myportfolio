@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import { Helmet } from 'react-helmet-async'
-import { SkeletonBox, SkeletonChipRow } from '../components/Skeleton.jsx'
+import { SkeletonBox, SkeletonChipRow } from '../components/Skeleton'
 const API = import.meta.env.VITE_API_URL
 
 function Loader() {
