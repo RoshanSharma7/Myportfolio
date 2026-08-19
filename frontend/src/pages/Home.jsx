@@ -114,11 +114,11 @@ export default function Home() {
       width:      '100%',
       minHeight:  '100vh',
     }}>
-      <Helmet>
+      {/* <Helmet>
         <title>Home - Roshan Sharma </title>
       </Helmet>
 
-      <Background3D />
+      <Background3D /> */}
 
       <div style={{
         position: 'relative',
