@@ -153,7 +153,7 @@ export default function Education() {
             color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
-            marginTop: 0,
+            marginTop: '-2rem',
           }}
         >
           print("my academic background")
