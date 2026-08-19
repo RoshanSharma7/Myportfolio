@@ -341,7 +341,7 @@ export default function About() {
             marginTop: 0,
           }}
         >
-          print("my about information, personal info, and links")
+          print("my about information, and links")
         </motion.p>
 
         <div style={{

@@ -325,7 +325,7 @@ export default function Contact() {
             color:        'var(--text-muted)',
             fontSize:     '0.85rem',
             marginBottom: '3rem',
-            marginTop:    '-2rem',
+            marginTop:    0,
           }}
         >
           print("form and contact info")

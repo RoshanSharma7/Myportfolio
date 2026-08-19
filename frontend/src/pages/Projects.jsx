@@ -239,7 +239,7 @@ export default function Projects() {
             color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '2rem',
-            marginTop: '-2rem',
+            marginTop: 0,
           }}
         >
           print("my personal and professional projects")

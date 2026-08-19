@@ -157,7 +157,7 @@ export default function Certification() {
             color: 'var(--text-muted)',
             fontSize: '0.85rem',
             marginBottom: '3rem',
-            marginTop: '-2rem',
+            marginTop: 0,
           }}
         >
           print("my certifications and achievements")
