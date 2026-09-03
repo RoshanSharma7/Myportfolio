@@ -169,10 +169,22 @@ export default function Skills() {
   }, [])
 
   const grouped = skills.reduce(function(acc, skill) {
-    if (!acc[skill.category]) acc[skill.category] = []
-    acc[skill.category].push(skill)
+    const cat = skill.category?.trim() || 'Other'   // FIX 1: "// undefined" bug hataya
+    if (!acc[cat]) acc[cat] = []
+    acc[cat].push(skill)
     return acc
   }, {})
+
+  // FIX 2: categories ek fixed order mein sort hongi
+  const CATEGORY_ORDER = ['Frontend', 'Backend', 'Database', 'Tools', 'DevOps', 'Cloud', 'Mobile', 'Other']
+  const sortedCategories = Object.keys(grouped).sort((a, b) => {
+    const ai = CATEGORY_ORDER.indexOf(a)
+    const bi = CATEGORY_ORDER.indexOf(b)
+    if (ai !== -1 && bi !== -1) return ai - bi
+    if (ai !== -1) return -1
+    if (bi !== -1) return 1
+    return a.localeCompare(b)
+  })
 
   return (
     <div style={{
@@ -215,7 +227,7 @@ export default function Skills() {
           <EmptyState />
         ) : (
           <div>
-            {Object.keys(grouped).map(function(category, catIndex) {
+            {sortedCategories.map(function(category, catIndex) {   // FIX 3: sorted list use ki
               return (
                 <CategorySection
                   key={category}

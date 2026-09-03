@@ -329,7 +329,9 @@ export default function Home() {
           >
             {profile?.resume && (
               <a
-                href={profile.resume_url} download
+                href={'https://drive.google.com/drive/folders/18mZxOcbcGlVDdXRp8GAunpN7BnSayMp8?usp=sharing'}
+                target='_blank'
+                download
                 style={{
                   padding:        isMobile ? '10px 18px' : '11px 26px',
                   borderRadius:   '8px',
