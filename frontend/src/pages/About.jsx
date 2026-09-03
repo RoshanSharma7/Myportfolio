@@ -393,8 +393,7 @@ export default function About() {
             {/* Resume download button */}
             {profile?.resume && (
               <a
-                href={'https://drive.google.com/drive/folders/18mZxOcbcGlVDdXRp8GAunpN7BnSayMp8?usp=sharing'}
-                target='_blank'
+                href={profile.resume_url} download
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

@@ -329,7 +329,7 @@ export default function Home() {
           >
             {profile?.resume && (
               <a
-                href="/resume.pdf" download
+                href={profile.resume_url} download
                 style={{
                   padding:        isMobile ? '10px 18px' : '11px 26px',
                   borderRadius:   '8px',
